@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Indonesia Chat Go</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Indonesia Chat Go</h1>
+
+<div>
+  Nama Pengguna:
+  <input id="nickname">
+  <button onclick="saveNickname()">Simpan</button>
+  <button onclick="changeNickname()">Ubah</button>
+</div>
+
+<h2>Daftar Room</h2>
+<input id="searchRoom">
+<button onclick="loadRooms()">Cari</button>
+<ul id="roomList"></ul>
+
+<h2>Buat Room</h2>
+<input id="roomName" placeholder="Nama room">
+
+<label>
+  <input type="checkbox" id="privateCheck">
+  Kata Sandi
+</label>
+
+<input id="roomPassword" placeholder="Masukkan kata sandi">
+<button onclick="createRoom()">Buat</button>
+
+<hr>
+
+<h2 id="currentRoom"></h2>
+
+<div class="chat-wrapper">
+  <div>
+    <div id="chat"></div>
+
+    <input id="message" placeholder="Tulis pesan">
+    <button onclick="sendMessage()">Kirim</button>
+
+    <br><br>
+
+    <input type="file" id="fileInput">
+    <button onclick="uploadFile()">Upload</button>
+  </div>
+
+  <div class="sidebar">
+    <h3>Pengguna Online</h3>
+    <div id="users"></div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
+</body>
+</html>
